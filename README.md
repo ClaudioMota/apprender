@@ -1,4 +1,5 @@
 # apprender
 
 Lista de presença:
-Memin Mota Aragão
+1-Memin Mota Aragão
+2-Patrick Ernandes Sandes
