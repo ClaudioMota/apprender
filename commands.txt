@@ -1,0 +1,25 @@
+git config --global user.email "MY_NAME@example.com" // Configurção básica só faz uma vez
+git config --global user.name "FIRST_NAME LAST_NAME"
+
+git clone https://github.com/ClaudioMota/apprender.git // Só faz uma vez na vida pra pegar o repositório remoto e salvar na maquina
+cd apprender
+
+git status // Vai mostrar que tá tudo bem "nothing to commit, working tree clean"
+
+// Vc faz as mudanças
+
+git status // Vai mostrar as mudanças que fez
+
+git add <nome dos arquivos que vc mudou> // Avisa ao git quais arquivos que realmente importam e que vc provavelmente vai commitar
+
+git commit -m"mensagem que descreve as mudanças" // Pega todas as mudanças adicionadas e cria um ponto na historia (Localmente)
+
+git push // Enviar todos os commits locais da branch que vc tá pra o remote (github)
+
+git branch // Mostra suas branches locais
+
+git checkout // Muda de branch
+
+git checkout -b <nome-nova-branch> // Cria uma nova branch a partir no momento da historia (daquele commit)
+
+git pull // Faz download os commits dessa brach que tão no remoto e não estão no local
