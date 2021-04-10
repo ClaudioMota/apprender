@@ -1,4 +1,4 @@
 # apprender
 
 Lista de presença:
-Memin Aragão
+Memin Mota Aragão
