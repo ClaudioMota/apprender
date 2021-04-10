@@ -23,3 +23,8 @@ git checkout // Muda de branch
 git checkout -b <nome-nova-branch> // Cria uma nova branch a partir no momento da historia (daquele commit)
 
 git pull // Faz download os commits dessa brach que tão no remoto e não estão no local
+
+git reset // Volta arquivos adicionados (é como se fosse o contrario do git add)
+
+git reset --hard // !Destroi! todas as mudanças feitas e volta pro estado inicial do commit
+
