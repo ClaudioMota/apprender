@@ -28,3 +28,6 @@ git reset // Volta arquivos adicionados (é como se fosse o contrario do git add
 
 git reset --hard // !Destroi! todas as mudanças feitas e volta pro estado inicial do commit
 
+git rebase <base> // Atualiza a base da branch
+
+git merge <base> // Junta a branch <base> à branch atual
