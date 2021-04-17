@@ -10,6 +10,8 @@ git status // Vai mostrar que tá tudo bem "nothing to commit, working tree clea
 
 git status // Vai mostrar as mudanças que fez
 
+git diff // Mostra todas as mudanças linha a linha feitas nos arquivos que não estão adicionados
+
 git add <nome dos arquivos que vc mudou> // Avisa ao git quais arquivos que realmente importam e que vc provavelmente vai commitar
 
 git commit -m"mensagem que descreve as mudanças" // Pega todas as mudanças adicionadas e cria um ponto na historia (Localmente)
@@ -18,7 +20,9 @@ git push // Enviar todos os commits locais da branch que vc tá pra o remote (gi
 
 git branch // Mostra suas branches locais
 
-git checkout // Muda de branch
+git branch -D <nome da branch> // Deleta a branch localmente
+
+git checkout <nome da branch> // Muda de branch
 
 git checkout -b <nome-nova-branch> // Cria uma nova branch a partir no momento da historia (daquele commit)
 
