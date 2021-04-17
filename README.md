@@ -1,5 +1,6 @@
 # apprender
 
 Lista de presença:
-1-Memin Mota Aragão
-2-Patrick Ernandes Sandes
+- Memin Mota Aragão
+- Patrick Ernandes Sandes
+- Claudio Mota
