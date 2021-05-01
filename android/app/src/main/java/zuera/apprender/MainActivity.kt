@@ -1,5 +1,6 @@
 package zuera.apprender
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,11 +20,13 @@ class MainActivity : AppCompatActivity() {
 
         val message :String = messageInput.text.toString()
         inputTextView.text = message
+        inputTextView.setTextColor(Color.GREEN)
         messageInput.text.clear()
 
         messagesBox.addView(inputTextView)
 
         outputTextView.text =  "-> " + interpretCommand(message)
+        outputTextView.setTextColor(Color.GREEN)
 
         messagesBox.addView(outputTextView)
     }
