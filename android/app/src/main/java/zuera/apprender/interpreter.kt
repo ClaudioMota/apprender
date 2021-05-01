@@ -1,5 +1,7 @@
 package zuera.apprender
 
+import android.icu.math.BigDecimal
+
 // Interprets a string as a command. Should be on the following format:
 // "command(param1, param2, ..., paramN)"
 fun interpretCommand(command : String) : String
@@ -46,7 +48,9 @@ fun runCommand(command :String, params : List<String>) : String
 {
     return when(command)
     {
+        "mult" -> mult(params)
         "concatenate" -> concatenate(params)
+        "lookatbike" -> lookAtBike(params)
         else -> "Error: Command not found"
     }
 }
@@ -55,4 +59,31 @@ fun runCommand(command :String, params : List<String>) : String
 fun concatenate(params : List<String>) : String
 {
     return params.joinToString("")
+}
+
+// Answer because there are many arrows on the ground
+fun lookAtBike(params :List<String>) : String
+{
+    val text: String = "Patrick is a noob archer!"
+    return text
+}
+
+//This method multiplyer two args
+fun mult(params :List<String>): String {
+
+    if(params.isEmpty()) return "Duuuude, heeelp me!"
+
+    val parseInt = params.map {
+        it.toIntOrNull()
+    }
+
+    var mult = 1
+
+    for (i in parseInt) {
+        if (i == null) return "You didn't insert acceptable values!"
+        else
+            mult *= i
+    }
+
+    return mult.toString()
 }
