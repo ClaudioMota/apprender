@@ -46,6 +46,7 @@ fun runCommand(command :String, params : List<String>) : String
 {
     return when(command)
     {
+        "add" -> add(params)
         "mult" -> mult(params)
         "concatenate" -> concatenate(params)
         "lookatbike" -> lookAtBike(params)
@@ -63,6 +64,7 @@ fun concatenate(params : List<String>) : String
 fun lookAtBike(params :List<String>) : String
 {
     val text: String = "Patrick is a noob archer!"
+    val text: String = "Patrick is the best archers in Valhein!"
     return text
 }
 
@@ -84,4 +86,22 @@ fun mult(params :List<String>): String {
     }
 
     return mult.toString()
+}
+fun add(params :List<String>): String {
+
+    if(params.isEmpty()) return "Something is wrong!"
+
+    val parseInt = params.map {
+        it.toIntOrNull()
+    }
+
+    var add = 0
+
+    for (i in parseInt) {
+        if (i == null) return "You didn't insert acceptable values!"
+        else
+            add += i
+    }
+
+    return add.toString()
 }
