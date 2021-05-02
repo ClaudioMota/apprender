@@ -1,6 +1,7 @@
 package zuera.apprender
 
-import android.icu.math.BigDecimal
+import kotlin.random.Random
+
 
 // Interprets a string as a command. Should be on the following format:
 // "command(param1, param2, ..., paramN)"
@@ -49,6 +50,7 @@ fun runCommand(command :String, params : List<String>) : String
     return when(command)
     {
         "add" -> add(params)
+        "rolldice" -> rollDice(params)
         "mult" -> mult(params)
         "concatenate" -> concatenate(params)
         "lookatbike" -> lookAtBike(params)
@@ -70,7 +72,28 @@ fun lookAtBike(params :List<String>) : String
     return text
 }
 
-//This method multiplyer two args
+//This method roll dices with parameters as range.
+fun rollDice(params :List<String>): String {
+
+    if(params.isEmpty()) return "You didn't insert parameters"
+
+    val parseInt = params.map {
+        it.toIntOrNull()
+    }
+
+    var roll = mutableListOf<Int>()
+
+    for (i in parseInt) {
+        if (i == null) return "You didn't insert acceptable values!"
+        else
+            roll.add(Random.nextInt(i))
+
+    }
+
+    return roll.toString()
+}
+
+
 fun mult(params :List<String>): String {
 
     if(params.isEmpty()) return "Duuuude, heeelp me!"
