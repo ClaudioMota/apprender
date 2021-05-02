@@ -1,7 +1,5 @@
 package zuera.apprender
 
-import android.icu.math.BigDecimal
-
 // Interprets a string as a command. Should be on the following format:
 // "command(param1, param2, ..., paramN)"
 fun interpretCommand(command : String) : String
