@@ -65,8 +65,7 @@ fun concatenate(params : List<String>) : String
 // Answer because there are many arrows on the ground
 fun lookAtBike(params :List<String>) : String
 {
-    val text: String = "Patrick is a noob archer!"
-    val text: String = "Patrick is the best archers in Valhein!"
+    val text: String = "Patrick is the best archers in Valheim!"
     return text
 }
 
@@ -89,6 +88,8 @@ fun mult(params :List<String>): String {
 
     return mult.toString()
 }
+
+//This method add two arguments
 fun add(params :List<String>): String {
 
     if(params.isEmpty()) return "Something is wrong!"
