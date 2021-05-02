@@ -1,6 +1,7 @@
 package zuera.apprender
 
 import kotlin.random.Random
+import kotlin.random.nextInt
 
 
 // Interprets a string as a command. Should be on the following format:
@@ -72,7 +73,7 @@ fun lookAtBike(params :List<String>) : String
     return text
 }
 
-//This method roll dices with parameters as range.
+//This method roll dice
 fun rollDice(params :List<String>): String {
 
     if(params.isEmpty()) return "You didn't insert parameters"
@@ -81,19 +82,19 @@ fun rollDice(params :List<String>): String {
         it.toIntOrNull()
     }
 
-    var roll = mutableListOf<Int>()
+    val roll = mutableListOf<Int>()
 
     for (i in parseInt) {
         if (i == null) return "You didn't insert acceptable values!"
+        if (i <= 0) return "Are you saw a negative dice or a dice with zero sides?"
         else
-            roll.add(Random.nextInt(i))
+            roll.add(Random.nextInt(1..i))
 
     }
-
     return roll.toString()
 }
 
-
+//This method multiplyer parameters.
 fun mult(params :List<String>): String {
 
     if(params.isEmpty()) return "Duuuude, heeelp me!"
