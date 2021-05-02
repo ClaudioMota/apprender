@@ -86,7 +86,7 @@ fun rollDice(params :List<String>): String {
 
     for (i in parseInt) {
         if (i == null) return "You didn't insert acceptable values!"
-        if (i <= 0) return "Are you saw a negative dice or a dice with zero sides?"
+        if (i <= 0) return "Have you ever seen a negative or zero sided dice? Bitch..."
         else
             roll.add(Random.nextInt(1..i))
 
