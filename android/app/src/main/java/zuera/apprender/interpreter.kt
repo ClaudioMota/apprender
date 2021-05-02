@@ -54,7 +54,6 @@ fun runCommand(command :String, params : List<String>) : String
         "rolldice" -> rollDice(params)
         "mult" -> mult(params)
         "concatenate" -> concatenate(params)
-        "lookatbike" -> lookAtBike(params)
         else -> "Error: Command not found"
     }
 }
@@ -63,14 +62,6 @@ fun runCommand(command :String, params : List<String>) : String
 fun concatenate(params : List<String>) : String
 {
     return params.joinToString("")
-}
-
-// Answer because there are many arrows on the ground
-fun lookAtBike(params :List<String>) : String
-{
-
-    val text: String = "Patrick is a noob archer!"
-    return text
 }
 
 //This method roll dice
