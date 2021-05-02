@@ -35,3 +35,5 @@ git reset --hard // !Destroi! todas as mudanças feitas e volta pro estado inici
 git rebase <base> // Atualiza a base da branch
 
 git merge <base> // Junta a branch <base> à branch atual
+
+git checkout - // Retorna para a ultima branch
