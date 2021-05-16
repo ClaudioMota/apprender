@@ -13,14 +13,16 @@ fun interpretCommand(command : String) : String
     if(commandAndParams.size < 2) return "Error: Should have parameters"
     if(commandAndParams.size > 2) return "Error: Too much parentheses"
 
-    val command = commandAndParams[0]
+    val commandName = commandAndParams[0]
     val paramsStr =  "(" + commandAndParams[1]
 
     var params = mutableListOf<String>()
 
     if(!parseParams(paramsStr, params)) return "Error: Something is wrong with the parentheses"
 
-    return runCommand(command, params)
+    val command = getCommandByName(commandName)
+    return if(command != null) command!!.run(params)
+    else "Error: Command not found"
 }
 
 // Retrieves a list of params from a string. The string should be on the following format:
@@ -45,7 +47,16 @@ fun parseParams(paramsStr : String, outParamsList : MutableList<String>) : Boole
     return result
 }
 
+fun getCommandByName(command :String) : Command?
+{
+    return when(command) {
+        "classes" -> Classes()
+        else -> null
+    }
+}
+
 // Runs a command given with the given parameters
+// @deprecated
 fun runCommand(command :String, params : List<String>) : String
 {
     return when(command)
@@ -54,6 +65,7 @@ fun runCommand(command :String, params : List<String>) : String
         "rolldice" -> rollDice(params)
         "mult" -> mult(params)
         "concatenate" -> concatenate(params)
+        "classes" -> classes(params)
         else -> "Error: Command not found"
     }
 }
@@ -123,4 +135,11 @@ fun add(params :List<String>): String {
     }
 
     return add.toString()
+}
+
+fun classes(params :List<String>) : String
+{
+    classesExample()
+
+    return ""
 }
