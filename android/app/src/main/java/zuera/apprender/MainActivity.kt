@@ -5,30 +5,32 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    val messages : MutableList<String> = mutableListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        messagesBox.adapter = MessageAdapter(messages)
+        messagesBox.layoutManager = LinearLayoutManager(applicationContext)
+
         showMessageBt.setOnClickListener(::runCommand)
     }
 
     private fun runCommand(view : View) {
-        val inputTextView : TextView = TextView(applicationContext)
-        val outputTextView : TextView = TextView(applicationContext)
-
-        val message :String = messageInput.text.toString()
-        inputTextView.text = message
-        inputTextView.setTextColor(Color.GREEN)
+        val inputMessage :String = messageInput.text.toString()
         messageInput.text.clear()
+        messages.add(inputMessage)
 
-        messagesBox.addView(inputTextView)
+        val outputMessage =  "-> " + interpretCommand(inputMessage)
+        messages.add(outputMessage)
 
-        outputTextView.text =  "-> " + interpretCommand(message)
-        outputTextView.setTextColor(Color.GREEN)
-
-        messagesBox.addView(outputTextView)
+        messagesBox.adapter!!.notifyDataSetChanged()
     }
 }
 
