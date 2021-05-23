@@ -15,6 +15,7 @@ class Classes : Command() {
 
 
 }
+//This class add two arguments
 class Add : Command() {
     override fun run(params :List<String>) : String
     {
@@ -34,6 +35,6 @@ class Add : Command() {
 
         return add.toString()
     }
-    }
+}
 
 
