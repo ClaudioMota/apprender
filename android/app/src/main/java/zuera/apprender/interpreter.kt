@@ -51,6 +51,9 @@ fun getCommandByName(command :String) : Command?
 {
     return when(command) {
         "add" -> Add()
+        "rolldice" -> RollDice()
+        "mult" -> Mult()
+        "concatenate" -> Concatenate()
         "classes" -> Classes()
         else -> null
     }
@@ -118,7 +121,7 @@ fun mult(params :List<String>): String {
     return mult.toString()
 }
 
-//This method add two arguments
+// Adds the arguments
 fun add(params :List<String>): String {
 
     if(params.isEmpty()) return "Something is wrong!"
