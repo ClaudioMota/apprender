@@ -50,6 +50,7 @@ fun parseParams(paramsStr : String, outParamsList : MutableList<String>) : Boole
 fun getCommandByName(command :String) : Command?
 {
     return when(command) {
+        "add" -> Add()
         "classes" -> Classes()
         else -> null
     }
